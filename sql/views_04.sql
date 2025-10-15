@@ -10,7 +10,7 @@ SELECT
 FROM public.customers c
 LEFT JOIN public.orders o ON o.customer_id = c.id
 GROUP BY c.id, c.first_name, c.last_name, c.address
-ORDER BY total_spent DESC;
+ORDER BY total_spent DESC;  
 
 
 -- Produtos mais vendidos
@@ -49,8 +49,8 @@ SELECT
   oi.unit_price AS product_unit_price,
 
   (oi.quantity * oi.unit_price) AS total_item
+  
 FROM public.orders o
 JOIN public.customers c ON c.id = o.customer_id
 JOIN public.order_items oi ON oi.order_id = o.id
 JOIN public.products p ON p.id = oi.product_id;
-
