@@ -74,7 +74,7 @@ As funções foram desenvolvidas para serem testadas com um cliente de API como 
 
   Abaixo está um screenshot do e-mail de confirmação sendo recebido com sucesso após a execução da função.
 
-    ![Prova do E-mail de Confirmação](./docs/Demonstracao-Edge-Function.png)
+  ![Prova do E-mail de Confirmação](./docs/Demonstracao-Edge-Function.png)
 
 ### 2\. Exportação de Pedido para CSV
 
