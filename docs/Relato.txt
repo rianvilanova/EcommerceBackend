@@ -1,0 +1,14 @@
+- Modelei o banco de dados no dbdiagram para visualizar o sistema antes de começar o desenvolvimento e criei as tabelas principais.
+- Adicionei as tabelas no Supabase e, em seguida, iniciei a configuração das RLS Policies.
+- Criei as RLS Policies essenciais nas tabelas customers, orders e order_items. Não criei na tabela products, por ser uma tabela acessível a todos.
+- Parti então para a criação de funções para automatizar processos. Além disso, optei por usar o sistema de autenticação do Supabase, garantindo que as políticas de RLS funcionem corretamente. Embora fosse possível simular usuários localmente, o uso do auth oferece maior escalabilidade e segurança, evitando a exposição e manipulação manual dos UUIDs.
+- Criei as funções previstas nos requisitos e, em seguida, alimentei o banco de dados para testá-las e preparar a criação das views.
+- Após os testes das funções, criei as views, inicialmente as essenciais, e posteriormente adicionei outras.
+- As views criadas incluem: total gasto por cliente, produtos mais vendidos e visão detalhada dos pedidos.
+- Em seguida, iniciei a criação das Edge Functions. Decidi utilizar a CLI do Supabase, pois ela permite escrever e testar as funções antes do deploy, além de facilitar o versionamento com o GitHub. Também adicionei uma coluna email na tabela de clientes, para possibilitar o envio de confirmações de pedido.
+- Notei que algumas views precisavam de ajustes para funcionar corretamente com as Edge Functions, e realizei as correções necessárias.
+- Finalizei a Edge Function de exportação para CSV.
+- Finalizei também a Edge Function de envio de email de confirmação de pedido, utilizando a Resend API.
+Observação: como não possuo domínio próprio, usei o email de teste fornecido pela Resend, que permite o envio apenas para o meu próprio endereço. No código, deixei um comentário indicando como a função ficaria caso um domínio fosse utilizado.
+
+O core do projeto foi concluído, com todos os requisitos atendidos. Agora, estou planejando novas funcionalidades para aprimorar o sistema.
