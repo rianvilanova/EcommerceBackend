@@ -16,7 +16,7 @@ O projeto cumpre todos os requisitos principais solicitados no desafio:
 
 ## Decisões de Arquitetura
 
-Durante o desenvolvimento, foram tomadas decisões importantes para garantir a qualidade, segurança e manutenibilidade do projeto:
+Durante o desenvolvimento, foram tomadas algumas decisões importantes:
 
   * **Segurança e Autenticação com Supabase Auth:** Optei por utilizar o sistema de autenticação nativo do Supabase em vez de criar uma simulação. Essa abordagem garante um nível de segurança muito maior, aproveitando os mecanismos de JWT da plataforma, e foi fundamental para a implementação robusta das políticas de RLS baseadas no `auth.uid()` de cada usuário.
 
@@ -70,7 +70,7 @@ As funções foram desenvolvidas para serem testadas com um cliente de API como 
       "order_id": "ID_DE_UM_PEDIDO_EXISTENTE"
     }
     ```
-  * **Observação:** *Como um domínio de e-mail não foi verificado, a função está configurada para usar o endereço de testes `onboarding@resend.dev`. Em um cenário de produção, bastaria alterar o campo `from` no código para um e-mail de domínio verificado.*
+  * **Observação:** *Como não um domínio de e-mail, não foi possível verificar um domínio, a função está configurada para usar o endereço de testes `onboarding@resend.dev`. Em um cenário de produção, bastaria alterar o campo `from` no código para um e-mail de domínio verificado. Caso você queria receber o e-mail de confirmação, você pode usar sua conta da Resend, substituindo a `RESEND_API_KEY` pela sua, e o campo `to` pelo seu e-mail de cadastro do Resend.*
 
   Abaixo está um screenshot do e-mail de confirmação sendo recebido com sucesso após a execução da função.
 
@@ -82,3 +82,6 @@ As funções foram desenvolvidas para serem testadas com um cliente de API como 
   * **URL:** `http://127.0.0.1:54321/functions/v1/export-order-csv`
   * **Headers e Body:** (Idênticos ao do envio de e-mail)
   * **Resposta Esperada:** O corpo da resposta será o texto puro do arquivo CSV.
+
+  Demonstração:
+ ![Prova do E-mail de Confirmação](./docs/Demonstracao-Export-Csv.png)
