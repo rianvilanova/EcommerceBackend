@@ -51,6 +51,7 @@ Abaixo está o diagrama que representa a estrutura do banco de dados do projeto.
     ```bash
     supabase start
     ```
+    **P.S:** *A pasta SQL contém apenas cada comando separado/organizado, mas a migration está dentro da pasta supabase, é essa a que você usará para testar.*
 3.  **Popule o Banco de Dados.**
 
 ## Como Testar as Edge Functions
